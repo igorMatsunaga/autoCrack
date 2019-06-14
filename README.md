@@ -36,7 +36,7 @@ python autoCrack.py</code></pre>
 <!-- /wp:tadv/classic-paragraph -->
 
 <!-- wp:tadv/classic-paragraph -->
-<p style="text-align: justify;">A segunda pergunta pede que você insira a interface de rede que será usada. Caso não saiba sua interface utilize o comando "wiconfig" ou "ifconfig", lembrando que o ataque deve ser realizado utilizando uma placa de rede wireless ou adaptador de rede USB.</p>
+<p style="text-align: justify;">A segunda pergunta pede que você insira a interface de rede que será usada. Caso não saiba sua interface utilize o comando "iwconfig" ou "ifconfig", lembrando que o ataque deve ser realizado utilizando uma placa de rede wireless ou adaptador de rede USB.</p>
 <!-- /wp:tadv/classic-paragraph -->
 
 <!-- wp:tadv/classic-paragraph -->
