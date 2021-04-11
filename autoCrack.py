@@ -28,7 +28,7 @@ print('\033[31m'+ logo +'\033[0;0m')
 print("----------------------------------------------------------------------------------------------")
 print("-------------------------------------NSWORLD--------------------------------------------------")
 print("----------------------------------------------------------------------------------------------")
-print("Certifique-se que sua placa suporta modo moitoramento e injeção, para que esse ataque funcione")
+print("Certifique-se que sua placa suporta modo monitoramento e injeção, para que esse ataque funcione")
 
 
 def dos():
